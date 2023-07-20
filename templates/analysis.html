@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Analysis Results</title>
+    <style>
+        body {
+            background-color: green;
+            overflow-x:scroll;
+            overflow-y:scroll;
+        }
+        h1 {
+            color: white;
+        }
+        #results {
+            height: 800px;
+            width: 500px;
+            background-color: white;
+            border: 5px solid black;
+            position: relative;
+            top: 10px;
+            left: calc(50% - 250px);
+        }
+        #file-name {
+            font-size: 20px;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            overflow-wrap: normal;
+        }
+        #submit-button {
+            height: 50px;
+            width: 100px;
+            font-size: 10px;
+            position: relative;
+            top: 20px;
+            left: calc(50% - 50px);
+        }
+        #features {
+            height: 85%;
+            width: 100%;
+            position: absolute;
+            top: 15%;
+        }
+        .bar-background {
+            background-color: white;
+            border: 2px solid black;
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top: 25%;
+            left: 40%;
+        }
+        .bar-progress {
+            position: absolute;
+            height: 100%;
+        }
+        .feature {
+            height: 40px;
+            width: 95%;
+            position: relative;
+            left: 5%;
+        }
+        #primary-mood-text, #secondary-mood-text {
+            font-size: 15px;
+            position: absolute;
+            top: calc(50% - 7.5px);
+        }
+        #primary-mood, #secondary-mood {
+            height: 40px;
+            width: 95%;
+            position: relative;
+            left: 5%;
+        }
+        .feature-text {
+            font-size: 15px;
+            position: absolute;
+            top: calc(50% - 7.5px);
+        }
+        #descriptions {
+            height: 800px;
+            width: 400px;
+            background-color: orange;
+            border: 2px solid black;
+            position: absolute;
+            right: 550px;
+        }
+        #description-text {
+            font-size: 14px;
+            height: 100%;
+            width: 90%;
+            position: absolute;
+            left: 5%;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1><center>Music Analysis Results</center></h1>
+    <div id="results">
+        <div id="descriptions">
+            <div id="description-text">
+            <p>
+                The value of each feature represents the Z-value of that feature. For example, a valence of -0.5 means
+                that the music has a valence which is roughly 0.5 standard deviations below the mean. The values of each
+                feature are only estimates based on the low-level music features and does not take account of the context,
+                the lyrics, or the conveyed mood of the music. For example, a music which rhythmically sounds bright and
+                cheerful but is meant to convey a dark theme is likely to be evaluated to have a high valence rather
+                than low according to the algorithm.
+            </p>
+            <p>
+                Valence: A measure of how positive the song is. Songs with high valence tend to be more happy, bright, or
+                exciting while songs with low valence tend to be more depressing, dark, angry, or anxious.
+            </p>
+            <p>
+                Energy: A measure of how energetic the song is. Songs with high energy tend to be more loud, fast, or
+                intense while songs with low energy tend to be more calm, slow, or chill.
+            </p>
+            <p>
+                Moods: The 8 moods include anger, anxiety, excitement, happiness, relaxation, calmness, sadness, and
+                darkness. The positive value for a mood means that the song is likely to have more of that particular
+                mood compared to average while a negative value means that the song is less likely to have that mood.
+                Primary mood is the mood with the highest value while secondary mood is the mood with the second highest
+                value.
+            </p>
+            <p>
+                Vocalness: A measure of how likely the song is going to have spoken words or lyrics. A positive value
+                means the song is more likely to be vocal while a negative value means the song is more likely to be
+                instrumental.
+            </p>
+            <p>
+                Acousticness: A measure of how likely the song is acoustic. A positive value means the song is more likely
+                to be acoustic while a negative value means the song is more likely to have electrical amplification.
+            </p>
+            <p>
+                Depth: A measure of how deep or sophisticated the music is. A high value means that the music more likely
+                to be complex and convey a sense of importance while a low value means that the music tend to be more
+                carefree and simple.
+            </p>
+            </div>
+        </div>
+        <div id="file-name"></div>
+        <div id="features">
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:black" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:black" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:red" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:pink" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:orange" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:yellow" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:lime" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:aqua" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:blue" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:purple" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:black" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:black" class="bar-progress"></div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-text">asd</div>
+                <div class="bar-background">
+                    <div style="background-color:black" class="bar-progress"></div>
+                </div>
+            </div>
+            <div id="primary-mood">
+                <div id="primary-mood-text">asd</div>
+
+            </div>
+            <div id="secondary-mood">
+                <div id="secondary-mood-text">asd</div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <form action="/" method="get">
+
+        <input type="submit" id="submit-button" value="Analyze New Music">
+
+    </form>
+    <script>
+        let featureNames = {{highfeatureNames | tojson}};
+        let yFeatures = {{finalY | tojson}};
+        let finalMoodArr = {{finalMoodArray | tojson}};
+        let percentileArray = {{percentileArray | tojson}};
+        let filename = {{fileName | tojson}};
+        let filenameText = document.getElementById("file-name");
+        filenameText.innerHTML = "Filename: " + filename;
+        let featureTextElements = document.getElementsByClassName("feature-text");
+        let barProgressElements = document.getElementsByClassName("bar-progress");
+        for (let i = 0; i < yFeatures.length; i++) {
+            let adjustedFeatureValue = (yFeatures[i] - 5).toFixed(1);
+            if (adjustedFeatureValue >= 5) {
+                adjustedFeatureValue = (5).toFixed(1);
+            } else if(adjustedFeatureValue <= -5) {
+                adjustedFeatureValue = (-5).toFixed(1);
+            }
+
+            let tempText = featureNames[i] + ": " + adjustedFeatureValue;
+            featureTextElements[i].innerHTML = tempText;
+            let adjustedBarWidth = 100 * percentileArray[i];
+            barProgressElements[i].style.width = adjustedBarWidth + "%";
+        }
+        let primaryMoodText = document.getElementById("primary-mood-text");
+        primaryMoodText.innerHTML = "Primary Mood: " + finalMoodArr[0];
+        let secondaryMoodText = document.getElementById("secondary-mood-text");
+        secondaryMoodText.innerHTML = "Secondary Mood: " + finalMoodArr[1];
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+        body {
+            background-color: #3399ff
+        }
+        #file-format-error-text {
+            color: red;
+            font-size: 16px;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+        }
+        h1 {
+            color: white
+        }
+        #instructions {
+            height: 500px;
+            width: 500px;
+            border: 5px solid black;
+            position: relative;
+            top: 10px;
+            left: calc(50% - 250px);
+            background-color: yellow;
+
+        }
+        #upload-fields {
+            height: 150px;
+            width: 500px;
+            border: 5px solid orange;
+            position: relative;
+            top: 20px;
+            left: calc(50% - 250px);
+            background-color: green;
+
+        }
+        #browse-button {
+            position: absolute;
+            left: 5%;
+            top: 30%;
+        }
+        #submit-button {
+            height: 25px;
+            width: 60px;
+            position: absolute;
+            top: 75%;
+            left: calc(50% - 30px);
+        }
+        #start-time-field {
+            height: 20px;
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 5%;
+        }
+        #start-time-field::placeholder,
+        #end-time-field::placeholder {
+            font-size: 10px;
+        }
+        #end-time-field {
+            height: 20px;
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+        #instruction-text {
+            height: 100%;
+            width: 90%;
+            position: absolute;
+            left: 5%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1><center>Music Feature Extractor</center></h1>
+    <div id="instructions">
+        <h2><center>Instructions</center></h2>
+        <div id="instruction-text">
+            <p>
+                The low-level features are extracted using essentia "http://essentia.upf.edu". Supported file types are:
+                mp3, wav, and ogg. Leave the start time and end time text fields blank if you want to analyze the entire
+                soundtrack.
+            </p>
+            <p>
+                For the best results, it is recommended that the song you upload have the following characteristics:
+            </p>
+            <ul>
+                <li>A music, not a sound effect or speech</li>
+                <li>Over 30 seconds long</li>
+                <li>A single song track, not an entire album or a compilation of songs</li>
+                <li>A continuous soundtrack with no unintentional breaks or splices</li>
+                <li>No more than 5 seconds of silence at the beginning or end of soundtracks</li>
+                <li>Similar to the type of music one could find in Spotify</li>
+            </ul>
+            <p>
+                If you only want the program to only analyze a specific chunk of the music file, you can specify a start
+                and end time of the section.
+            </p>
+        </div>
+    </div>
+    <form action="/upload_test" method="post" enctype="multipart/form-data">
+        <div id="upload-fields">
+            <div id="file-format-error-text">{{ErrorText}}</div>
+            <input type="file" id="browse-button" name="file" accept=".mp3, .ogg, .wav">
+            <input type="text" id="start-time-field" placeholder="start time in seconds" name="start-time">
+            <input type="text" id="end-time-field" placeholder="end time in seconds" name="end-time">
+            <input type="submit" id="submit-button" value="Submit">
+
+        </div>
+    </form>
+
+
+    <script>
+        let browse_button = document.getElementById("browse-button");
+        let submit_button = document.getElementById("submit-button");
+        browse_button.disabled = false;
+        submit_button.disabled = false;
+        submit_button.addEventListener("click", disableFileUpload);
+
+        function disableFileUpload() {
+            setTimeout(function() {
+                browse_button.disabled = true;
+                submit_button.disabled = true;
+            }, 0);
+
+        }
+    </script>
+</body>
+</html>
