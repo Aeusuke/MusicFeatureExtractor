@@ -8,7 +8,7 @@ Step 4: Create a virtual environment using `python -m venv venv` or `python3 -m 
 Step 5: Activate the virtual environment using `source venv/bin/activate`  </br>
 Step 6: Install the dependencies using `pip install -r requirements.txt`  </br>
 ## How to Use?
-Step 1: Run "python main.py" in the terminal while in the root directory.  </br>
+Step 1: Run `python main.py` in the terminal while in the root directory.  </br>
 Step 2: Copy the link provided in the terminal into a browser.  </br>
 Step 3: Follow the instructions given in the web application.
 ## Credits
