@@ -2,6 +2,7 @@ import essentia.standard as es
 import constants as cons
 import numpy as np
 from features import low_level_features, mood_features
+import os
 
 
 class MusicAnalyzer:
@@ -127,6 +128,8 @@ class MusicAnalyzer:
         music_duration = self.__end_time - self.__start_time
         self.__eval_steps = int(music_duration / cons.EVALUATION_LENGTH) + 1
         audio_file, a, b, c, d, e = es.AudioLoader(filename=self.__uploaded_music_name)()
+        if not os.path.exists("./Temp"):
+            os.mkdir("./Temp")
         for j in range(self.__eval_steps):
             temp_audio_file = es.StereoTrimmer(startTime=self.__start_time + music_duration / self.__eval_steps * j,
                                                endTime=self.__start_time + music_duration /
